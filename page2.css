@@ -1,0 +1,70 @@
+/* 
+div {
+border:black
+margin:50px;
+border:10px;
+padding: 5px;
+background-color: rgb(181, 18, 18);
+border:5px;
+border-color:black
+
+} */
+
+/* button {
+    background-image: url('https://blog.tui-blue.com/wp-content/uploads/hammamet-strand-kasbah.jpg');
+    width:200px;
+    height:200px;
+} */
+
+body {
+    background-color:white
+
+}
+#ham {
+    display: flex;
+    justify-content: space-around;
+    
+    
+    
+}
+
+
+button {
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+  #image{
+    width :240px;
+    height: 240px;
+  }
+
+
+h2 {
+   
+    text-align:center;
+    font-size:40px;
+}
+.Hammamet,.jerba,.Sousse  {
+    transform: perspective(1000px) rotateX(-90deg);
+    transition:0.5s;
+}
+
+.Hammamet.active{
+    transform: perspective(1000px) rotateX(0deg);
+ 
+}
+
+
+.jerba.active {
+    transform: perspective(1000px) rotateX(0deg);
+ 
+}
+
+.Sousse.active {
+    transform: perspective(1000px) rotateX(0deg);
+ 
+}
