@@ -20,7 +20,7 @@ body {
     background-color:white
 
 }
-#ham {
+#ham  {
     display: flex;
     justify-content: space-around;
     
@@ -53,18 +53,18 @@ h2 {
     transition:0.5s;
 }
 
-.Hammamet.active{
+.Hammamet.active,.jerba.active,.Sousse.active{
     transform: perspective(1000px) rotateX(0deg);
  
 }
 
 
-.jerba.active {
+/* .jerba.active {
     transform: perspective(1000px) rotateX(0deg);
  
-}
+} */
 
-.Sousse.active {
+/* .Sousse.active {
     transform: perspective(1000px) rotateX(0deg);
  
-}
+} */
