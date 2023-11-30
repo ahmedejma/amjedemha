@@ -1,47 +1,63 @@
-/* 
+
 div {
-border:black
-margin:50px;
-border:10px;
+border:black;
+margin:20px;
+border:100px;
 padding: 5px;
-background-color: rgb(181, 18, 18);
 border:5px;
-border-color:black
+border-color:black;
 
-} */
 
-/* button {
-    background-image: url('https://blog.tui-blue.com/wp-content/uploads/hammamet-strand-kasbah.jpg');
-    width:200px;
-    height:200px;
-} */
+}
+
+
 
 body {
-    background-color:white
+    background-color:#2c3e50;
+    margin-top: 5px;
+
+    .but{
+        display:flex;
+        border:0px,
+    }
+    
 
 }
-#ham  {
-    display: flex;
-    justify-content: space-around;
-    
-    
-    
+.ham  {
+    display:flex;
+justify-content: center;
+
+
 }
 
+.pad {
+    margin-top: 20px;
+display:flex;
+justify-content: center;
+
+
+}
 
 button {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
+    width:200px;
+    height: 40px;
+    background-color: transparent;
+    
+    
 }
 
 
-  #image{
-    width :240px;
-    height: 240px;
-  }
 
+  img{
+    margin:5px;
+    width:10pxx;
+   border-radius: 20px;
+  }
 
 h2 {
    
@@ -58,13 +74,23 @@ h2 {
  
 }
 
+.image1,.image2,.image3 {
 
-/* .jerba.active {
-    transform: perspective(1000px) rotateX(0deg);
- 
-} */
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-/* .Sousse.active {
-    transform: perspective(1000px) rotateX(0deg);
- 
-} */
+.class1 {
+    
+    
+    text-align:center;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
