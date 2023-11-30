@@ -1,40 +1,47 @@
 
 
-  function makeGover(name,weather,location,images){
+
+
+
+    
+  function makeGover(name,temperature,location){
+    
     var gover={}
+    gover.list
       gover.name=name
-      gover.weather=weather
+      gover.temperature=temperature
       gover.location=location
-      gover.list=[]
+
       // gover.add=addGover
       // gover.remove=removeGover  
-      // gover.sort=sortGover
+      gover.sortByTemperature=sorTempature
       return gover
     }
     
-  var gover1 =makeGover("Hammamet","Sunny","Cap Bon")
- 
-  var gover2 =makeGover("Jerba","Cloudy","South")
-  var gover3 =makeGover("Sousse","Sunny","South",[,,,])
+  var gover1 =makeGover("Hammamet",39,"Cap Bon")
+  var gover2 =makeGover("Jerba",32,"South")
+  var gover3 =makeGover("Sousse",35,"South")
 
-console.log(this.list)
-  $('p1').text(gover1.name) 
- 
-  $('p1').append(gover1.weather)
-  
-  $('p1').append(gover1.location)
+var list = [gover1,gover2,gover3]
 
-  $('p2').text(gover2.name) 
+// console.log(this.list)
+  $('p1').text("Government: " + gover1.name + " Temperature: " +  gover1.temperature + " Location:" + gover1.location) 
+  $('p2').text("Government: " + gover2.name + " Temperature: " + gover2.temperature + " Location:" + gover2.location) 
+  $('p3').text("Government: " +gover3.name + " Temperature: " +  gover3.temperature + " Location:" +gover3.location) 
  
-  $('p2').append(gover2.weather)
+  // $('p1').text(<ul> <li>gover1.name</li> <li>gover2.weather  </li> <li> gover1.location</li> </ul>)
+
   
-  $('p2').append(gover2.location)
-  $('p3').text(gover3.name) 
- 
-  $('p3').append(gover3.weather)
+ var sorTempature=function() {
+  list.sort(function(a,b){
+    a.temperature-b.temperature
+  })
+ }
+
+ $('input').click(function(){
   
-  $('p3').append(gover3.location)
-  
+
+ })
 
 
 
@@ -44,34 +51,35 @@ console.log(this.list)
 
   $(document).ready(function(){
     ;$(".image1").click(function(){
-      $(".Hammamet").toggleClass("active");
+      $(".ham").toggleClass("active");
     })
     ;$(".image2").click(function(){
-      $(".jerba").toggleClass("active");
+      $(".jer").toggleClass("active");
     })
     ;$(".image3").click(function(){
-      $(".Sousse").toggleClass("active");
+      $(".sus").toggleClass("active");
     })
-    // ;$(".image4").click(function(){
-    //   $(".Hammamet").toggleClass("active");
-    // })
-    // ;$(".image5").click(function(){
-    //   $(".Hammamet").toggleClass("active")
-    // })
-
-
-
-
-
-
-    $(".Dje").click(function(){
-        $(".jerba").toggleClass("active");
-      });
-    
-      $(".click").click(function(){
-        $(".Sousse").toggleClass("active");
-      });
-
-  });
+  })
     
 
+
+
+//   $(document).ready(function(){
+
+// ;$(".image4").click(function(){
+//       $(".Hammamet").toggleClass("active");
+//     })
+//     ;$(".image5").click(function(){
+//       $(".Hammamet").toggleClass("active")
+//     })
+
+
+//     $(".Dje").click(function(){
+//         $(".jerba").toggleClass("active");
+//       });
+    
+//       $(".click").click(function(){
+//         $(".Sousse").toggleClass("active");
+//       });
+
+//     })
