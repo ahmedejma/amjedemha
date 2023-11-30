@@ -1,7 +1,7 @@
 
 div {
 border:black;
-margin:20px;
+margin:10px;
 /* border:100px; */
 padding: 5px;
 border:5px;
@@ -15,7 +15,7 @@ border-right: 100px;
 
 
 body {
-    background-color:white;
+    background-color:bisque;
     margin-top: 5px;
 
   
@@ -40,8 +40,8 @@ justify-content: center;
 button {
     display: flex;
     /* justify-content: space-around; */
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto; */
+    margin-right: 5px;
     cursor: pointer;
     width:200px;
     height: 50px;
@@ -50,7 +50,12 @@ button {
     display: inline-block;
     font-size:20px;
     
+    .bottom{
+        width:200px,
+        height:50px;
+    }
     
+
 }
 
 #button {
@@ -107,8 +112,8 @@ h2 {
 
 
 
-p1,p2,p3 {
-    font-size:30px;
 
+
+#id1,#id2,#id3{
+display:flex
 }
-
