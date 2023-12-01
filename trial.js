@@ -1,3 +1,29 @@
+function each(array, func) { 
+  for (var i = 0; i < array.length; i++) { 
+        func(array[i], i); 
+  } 
+}
+
+function map(array, f) { 
+  var acc = []; 
+  each(array, function(element, i) { 
+        acc.push(f(element, i)); 
+  }); 
+  return acc; 
+}
+
+function filter(array, predicate) {
+var acc = [];
+each(array, function (element, index) {
+ // notice we added the index here
+ if (predicate(element, index)) {
+   // notice we added the index here
+   acc.push(element);
+ }
+});
+return acc;
+}
+
 function MakeGov(name,temperature,location,distance,images) {
     return {
     name:name ,
@@ -26,7 +52,6 @@ function MakeGov(name,temperature,location,distance,images) {
   "https://a.cdn-hotels.com/gdcs/production8/d260/d0f5c4a9-820e-4a7e-9cea-18cbbf0adc82.jpg?impolicy=fcrop&w=1600&h=1066&q=medium",
 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJsqzJoc71IwyjSRT-3eLI8aHDKuXgnMCWSg&usqp=CAU"]])
 
-  console.log(gover1)
  
 
 
@@ -38,34 +63,35 @@ function MakeGov(name,temperature,location,distance,images) {
 
 
 function getNextImages() {
-$('#img').attr('src',gover1[0].images)
-$('#img').attr('src',gover2[0].images)
-$('#img').attr('src',gover3[0].images)
+$('#img').attr('src',list[0][0].images)
+$('#img').attr('src',list[1][0].images)
+$('#img').attr('src',list[2][0].images)
 }
 
 
+var list=[gover1,gover2,gover3]
 
-$(".shop1").html("<img id='img1'  class='ham' src = " + gover1.images[0]  + "/>")
-$(".shop2").html("<img id='img2' class='jer' src = " + gover2.images[0]  + "/>")
-$(".shop3").html("<img id='img3' class='sus' src = " + gover3.images[0]  + "/>")
-
-
-
-$(".shop1").append("<img class='img11' class='ham' src = " + gover1.images[1][0]+ "/>"  )
-$(".shop1").append("<img class='img11' class='ham' src = " + gover1.images[1][1]+ "/>"  )
-$(".shop1").append("<img class='img11' class='ham' src = " + gover1.images[1][2]+ "/>"  )
-
-$(".shop2").append("<img class='img22' class='jer' src = " + gover2.images[1][0]+ "/>"  )
-$(".shop2").append("<img class='img22' class='jer' src = " + gover2.images[1][1]+ "/>"  )
-$(".shop2").append("<img class='img22' class='jer' src = " + gover2.images[1][2]+ "/>"  )
-$(".shop3").append("<img class='img33' class='sus' src = " + gover3.images[1][0]+ "/>"  )
-$(".shop3").append("<img class='img33' class='sus' src = " + gover3.images[1][1]+ "/>"  )
-$(".shop3").append("<img class='img33' class='sus' src = " + gover3.images[1][2]+ "/>"  )
+$(".shop1").html("<img id='img1'  class='ham' src = " + list[0].images[0]  + "/>")
+$(".shop2").html("<img id='img2' class='jer' src = " + list[0].images[0]  + "/>")
+$(".shop3").html("<img id='img3' class='sus' src = " + list[0].images[0]  + "/>")
 
 
-$(".shop1").append("<h2>" + " Government : "+ gover1.name + "</h2>" + "<h2>" + " Temperature : " + gover1.temperature + "</h2>" +"<h2>" + "Location :" +  gover1.location + "</h2>"  + "<h2>" + "Distance :" + gover1.distance + "</h2>" )  
-$(".shop2").append("<h2>" + " Government : "+ gover2.name + "</h2>" + "<h2>" + " Temperature : " + gover2.temperature + "</h2>" +"<h2>" + "Location :" +  gover2.location + "</h2>"  + "<h2>" + "Distance :" + gover2.distance + "</h2>" )  
-$(".shop3").append("<h2>" + " Government : "+ gover3.name + "</h2>" + "<h2>" + " Temperature : " + gover3.temperature + "</h2>" +"<h2>" + "Location :" +  gover3.location + "</h2>"  + "<h2>" + "Distance :" + gover3.distance + "</h2>" )  
+
+$(".shop1").append("<img class='img11' class='ham' src = " + list[0].images[1][0]+ "/>"  )
+$(".shop1").append("<img class='img11' class='ham' src = " + list[0].images[1][1]+ "/>"  )
+$(".shop1").append("<img class='img11' class='ham' src = " + list[0].images[1][2]+ "/>"  )
+
+$(".shop2").append("<img class='img22' class='jer' src = " + list[1].images[1][0]+ "/>"  )
+$(".shop2").append("<img class='img22' class='jer' src = " + list[1].images[1][1]+ "/>"  )
+$(".shop2").append("<img class='img22' class='jer' src = " + list[1].images[1][2]+ "/>"  )
+$(".shop3").append("<img class='img33' class='sus' src = " + list[2].images[1][0]+ "/>"  )
+$(".shop3").append("<img class='img33' class='sus' src = " + list[2].images[1][1]+ "/>"  )
+$(".shop3").append("<img class='img33' class='sus' src = " + list[2].images[1][2]+ "/>"  )
+
+
+$(".shop1").append("<h2>" + " Government : "+ list[0].name + "</h2>" + "<h2>" + " Temperature : " + list[0].temperature + "</h2>" +"<h2>" + "Location :" +  list[0].location + "</h2>"  + "<h2>" + "Distance :" + list[0].distance + "</h2>" )  
+$(".shop2").append("<h2>" + " Government : "+ list[1].name + "</h2>" + "<h2>" + " Temperature : " + list[1].temperature + "</h2>" +"<h2>" + "Location :" +  list[1].location + "</h2>"  + "<h2>" + "Distance :" + list[1].distance + "</h2>" )  
+$(".shop3").append("<h2>" + " Government : "+ list[2].name + "</h2>" + "<h2>" + " Temperature : " + list[2].temperature + "</h2>" +"<h2>" + "Location :" +  list[2].location + "</h2>"  + "<h2>" + "Distance :" + list[2].distance + "</h2>" )  
 
 
 $(".img11").css({"width":"360px","height":"240px"})
@@ -73,9 +99,33 @@ $(".img22").css({"width":"360px","height":"240px"})
 $(".img33").css({"width":"360px","height":"240px"})
 
 
+function convertKmToMiles (list) {
+return map(list,function(element) {
+  return element.distance /1.609
+})
+}
+
+function convertMilesToKm (list) {
+  return map(list,function(element) {
+    return element.distance * 1.609
+  })
+  }
+  
 
 
 
+  function setHighestDistance (number) {
+    return filter (list,function(element){
+      return element.distance < number
+    })
+  }
+
+
+  function setHighestTemperature (number) {
+    return filter (list,function(element){
+      return element.distance < number
+    })
+  }
 
 
 

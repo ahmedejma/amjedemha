@@ -12,9 +12,40 @@
       
     <div> 
        <h1 style ="text-align: center;">   Come Visit Tunisia </h1>
-       <button onclick= sortBydistance ()> sort by temperture</button>
-       <button onclick= sortbyDistance ()> sort by Distance</button>
+
+       <div class="sorting"> 
+
+
+       <select id="filterdistance" onchange="sortMilesToKm()">
+        
+        <option value="">Km</option>
+        <option value="">Miles</option>
+       
+        </select>
+
+      :
+
+
+
+      <form action="convertKmToMiles()">
+
+        <label for="quantity">Set Maximum Distance</label>
+        <input type="number" id="quantity" name="quantity" min="-40" max="100">
+        <input type="submit" value="Submit">
+      
+      </form>
+
+
+
     </div>
+
+    
+
+
+
+       <!-- <button onclick= sortBydistance ()> sort by temperture</button>
+       <button onclick= sortbyDistance ()> sort by Distance</button>
+    -->
 
     <h1 class="first"> </h1>
     <div class="class1"> 
