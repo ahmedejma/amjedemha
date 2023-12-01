@@ -38,7 +38,7 @@ function MakeGov(name,temperature,location,distance,images) {
   }
   }
 
-  var gover1 =MakeGov("Hammamet",32,"Cap Bon",40,["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkxFF4cmTla_Nci3U-K4FVJjpuncLXpouv2A&usqp=CAU",
+  var gover1 =MakeGov("Hammamet",32,"Cap Bon",40,["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScbpk3ODagCo-lCjGI8U6v2GsJ24iiN83HSg&usqp=CAU",
   ["https://a.cdn-hotels.com/gdcs/production146/d1430/e1a0723c-a2f6-491f-b099-8fb1bee294b2.jpg?impolicy=fcrop&w=800&h=533&q=medium",
   "https://a.cdn-hotels.com/gdcs/production8/d260/d0f5c4a9-820e-4a7e-9cea-18cbbf0adc82.jpg?impolicy=fcrop&w=1600&h=1066&q=medium",
 "https://a.cdn-hotels.com/gdcs/production199/d1976/a073366a-43a5-4707-8321-488349ce7c9e.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"]])
@@ -57,8 +57,8 @@ function MakeGov(name,temperature,location,distance,images) {
 
   $('body').css("background-color","bisque")
   $("title").text("Hotely Booking")
-  $(".first").text("Come To Tunisia").css({"font-size":"40px","margin-top": "5px"})
-  $(".first").css({"text-align":"center","background-color":"aqua"})
+
+  $(".first").css({"text-align":"center","background-color":"transparent"})
 
 
 
@@ -70,10 +70,11 @@ $('#img').attr('src',list[2][0].images)
 
 
 var list=[gover1,gover2,gover3]
+console.log(list)
 
 $(".shop1").html("<img id='img1'  class='ham' src = " + list[0].images[0]  + "/>")
-$(".shop2").html("<img id='img2' class='jer' src = " + list[0].images[0]  + "/>")
-$(".shop3").html("<img id='img3' class='sus' src = " + list[0].images[0]  + "/>")
+$(".shop2").html("<img id='img2' class='jer' src = " + list[1].images[0]  + "/>")
+$(".shop3").html("<img id='img3' class='sus' src = " + list[2].images[0]  + "/>")
 
 
 
@@ -99,26 +100,34 @@ $(".img22").css({"width":"360px","height":"240px"})
 $(".img33").css({"width":"360px","height":"240px"})
 
 
-function convertKmToMiles (list) {
-return map(list,function(element) {
+
+
+function convertKmToMiles () {
+
+list =  map(list,function(element) {
   return element.distance /1.609
 })
 }
 
-function convertMilesToKm (list) {
-  return map(list,function(element) {
+convertKmToMiles()
+
+function convertMilesToKm () {
+  list = map(list,function(element) {
     return element.distance * 1.609
   })
   }
   
+  convertMilesToKm
 
 
 
   function setHighestDistance (number) {
+    // ('body').empty()
     return filter (list,function(element){
       return element.distance < number
     })
   }
+  setHighestDistance(40)
 
 
   function setHighestTemperature (number) {
@@ -126,6 +135,9 @@ function convertMilesToKm (list) {
       return element.distance < number
     })
   }
+
+  setHighestTemperature(70)
+
 
 
 

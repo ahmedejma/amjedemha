@@ -13,10 +13,10 @@
     <div> 
        <h1 style ="text-align: center;">   Come Visit Tunisia </h1>
 
-       <div class="sorting"> 
+       <!-- <div class="sorting">  -->
 
 
-       <select id="filterdistance" onchange="sortMilesToKm()">
+       <select id="filterdistance" onchange="convertKmToMiles()">
         
         <option value="">Km</option>
         <option value="">Miles</option>
@@ -27,7 +27,7 @@
 
 
 
-      <form action="convertKmToMiles()">
+      <form action="setHighestDistance()">
 
         <label for="quantity">Set Maximum Distance</label>
         <input type="number" id="quantity" name="quantity" min="-40" max="100">

@@ -2,10 +2,10 @@
 div {
     border:black;
     margin:10px;
-    /* border:100px; */
+   
     padding: 5px;
     border:5px;
-    /* border-color:black; */
+ 
     display:inline-flex
     border-right: 2px
     
@@ -13,8 +13,7 @@ div {
     }
     button {
         display: flex;
-        /* justify-content: space-around; */
-        /* margin-left: auto; */
+      
         margin-right: 5px;
         cursor: pointer;
         width:200px;
@@ -80,41 +79,23 @@ div {
         margin-right: auto;
     }
 
-    /* h2{
-        
-        width: 240px;
-      
-        position: absolute;
-    top: 0;
-    right: 0;
-       
-    }
-    
-    h2 div {
-       margin-top:20px
-    } */
+  
 
     .shop1 {
-        /* display:flex; */
+       
      display:inline
     }
     .shop2 {
-        /* display:flex; */
+      
      display:inline
     }
     .shop3 {
-        /* display:flex; */
+       
      display:inline
     }
 
 
 
-    .class1 {
-        position: relative;
-        border: solid black;
-        padding:50px;
-      }
-      
       .h2  {
        position:static;
         top: 0;
